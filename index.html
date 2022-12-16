@@ -1,1 +1,94 @@
-# GITN-P
+
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>
+		Prüfziffer GITN
+		</title>
+		
+		<script>
+			"use strict";
+			function rechne() {
+
+			   var vErgebnis
+			   var vAusgabehtml="";
+               var vPruefziffer
+				
+               var vN1
+			   var vN2
+			   var vN3
+			   var vN4
+			   var vN5
+			   var vN6
+			   var vN7
+			   
+			   
+
+			   vN1 = document.getElementById("idZ1").value;
+			   vN2 = document.getElementById("idZ2").value;
+			   vN3 = document.getElementById("idZ3").value;
+			   vN4 = document.getElementById("idZ4").value;
+			   vN5 = document.getElementById("idZ5").value;
+			   vN6 = document.getElementById("idZ6").value;
+			   vN7 = document.getElementById("idZ7").value;
+			   
+			   
+
+			   
+               
+
+			   vErgebnis = (vN1*3)+(vN2*1)+(vN3*3)+(vN4*1)+(vN5*3)+(vN6*1)+(vN7*3);
+
+			   vPruefziffer= 10 - (vErgebnis%10);
+
+			   if  (vPruefziffer == 10) {
+
+				   vPruefziffer = 0;
+
+			    }
+
+           		vAusgabehtml = "Die Artikelnummer lautet " + vN1 + vN2 + vN3 + vN4 + vN5 + vN6 + vN7; 
+
+				vAusgabehtml = vAusgabehtml +  " Die Prüfsumme ist ";
+				vAusgabehtml = vAusgabehtml + vErgebnis ;
+				vAusgabehtml = vAusgabehtml + " und die Prüfziffer ist ";
+				vAusgabehtml = vAusgabehtml + vPruefziffer;
+				vAusgabehtml = vAusgabehtml + ".";
+
+		
+				document.getElementById("idAusgabeHTML").innerHTML = vAusgabehtml;
+
+				
+				}
+
+
+
+
+			
+			
+			
+		</script>
+	
+</head>
+
+	<body>
+		<h1>Prüfziffer GTIN</h1>
+		Gobale Artikelnummer: 
+		<input id="idZ1" type="text" maxlength="1" size="1" value="4">
+		<input id="idZ2" type="text" maxlength="1" size="1" value="2">
+		<input id="idZ3" type="text" maxlength="1" size="1" value="2">
+		<input id="idZ4" type="text" maxlength="1" size="1" value="1">
+		<input id="idZ5" type="text" maxlength="1" size="1" value="4">
+		<input id="idZ6" type="text" maxlength="1" size="1" value="3">
+		<input id="idZ7" type="text" maxlength="1" size="1" value="9">
+		
+		
+		
+		
+		<br> 
+		<br> 
+		<button onclick="rechne();">Rechne!</button>
+		<br> 
+		<br> 
+		<div id="idAusgabeHTML"></div>
+	
+
+</body></html>
